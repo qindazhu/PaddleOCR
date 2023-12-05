@@ -44,7 +44,7 @@ from deploy.hubserving.structure_table_ch.params import read_params
     author_email="paddle-dev@baidu.com",
     type="cv/structure_table")
 class TableSystem(hub.Module):
-    def __init__(self, use_gpu=False, enable_mkldnn=False):
+    def _initialize(self, use_gpu=False, enable_mkldnn=False):
         """
         initialize with the necessary elements
         """
