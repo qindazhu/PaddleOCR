@@ -44,7 +44,9 @@ from deploy.hubserving.structure_table_en.params import read_params
     author_email="paddle-dev@baidu.com",
     type="cv/structure_table")
 class TableSystem(hub.Module):
-    def __int__(self, use_gpu=False, enable_mkldnn=False):
+    # TODO: if change `_initialize` to `__init__`, there is an error `'TableSystem' object has no attribute 'table_sys'`
+    # but if keep `_initialize`, there is a warning says `_initialize method in HubModule will soon be deprecated`
+    def _initialize(self, use_gpu=False, enable_mkldnn=False):
         """
         initialize with the necessary elements
         """
